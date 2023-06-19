@@ -1,5 +1,5 @@
 [package]
-name = "gl_struct"
+name = "gl_dstruct"
 version = "0.1.0"
 edition = "2021"
 description = "OpenGl function loader with StructGenerator / DebugStructGenerator"
