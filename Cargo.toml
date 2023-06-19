@@ -2,6 +2,11 @@
 name = "gl_struct"
 version = "0.1.0"
 edition = "2021"
+description = "OpenGl function loader with StructGenerator / DebugStructGenerator"
+readme = "README.md"
+license-file = "LICENSE"
+repository = "https://github.com/Monkvy/gl_struct"
+keywords = ["graphics", "opengl"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
