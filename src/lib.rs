@@ -1,20 +1,18 @@
 
-mod bindings {
+pub mod gl {
     include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 }
 
 
-pub use bindings::*;
 use std::{rc::Rc, ops::Deref};
-
 
 #[derive(Clone)]
 pub struct Gl {
-    inner: Rc<bindings::Gl>
+    inner: Rc<gl::Gl>
 }
 
 impl Deref for Gl {
-    type Target = bindings::Gl;
+    type Target = gl::Gl;
 
     fn deref(&self) -> &Self::Target {
         &self.inner
@@ -22,8 +20,8 @@ impl Deref for Gl {
 }
 
 pub fn load_with<F>(loadfn: F) -> Gl
-where F: FnMut(&'static str) -> *const types::GLvoid {
+where F: FnMut(&'static str) -> *const gl::types::GLvoid {
     Gl {
-        inner: Rc::new(bindings::Gl::load_with(loadfn))
+        inner: Rc::new(gl::Gl::load_with(loadfn))
     }
 }
